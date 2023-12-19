@@ -52,7 +52,9 @@ df = df.drop(['rev_min', 'rev_sec'], axis = 1)
 
 #To numeric
 df["rev_amt"] = pd.to_numeric(df["rev_amt"])
-df["rev_total_sec"] = int(df["rev_total_sec"])
-
+#df["rev_total_sec"] = pd.to_numeric(df["rev_total_sec"])
+#TypeError: cannot convert the series to <class 'float'>. can not use to_numeric
+#have to use lambda to change type to float
+df["rev_total_sec"]= df["rev_total_sec"].apply(lambda x: float(x))
 df.info()
 
