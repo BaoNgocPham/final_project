@@ -58,6 +58,9 @@ df["rev_amt"] = pd.to_numeric(df["rev_amt"])
 #have to use lambda to change type to float
 df["rev_total_sec"]= df["rev_total_sec"].apply(lambda x: float(x))
 
+#remove trailing space
+df['term_st'] = df['term_st'].str.strip()
+df['term_cntry'] = df['term_cntry'].str.strip()
 
 #SQL compilation error: maximum number of expressions in a list exceeded, expected at most 16,384, got 300,006
 chunk_size = 10000  
