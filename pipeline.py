@@ -7,7 +7,7 @@ from snowflake.connector.pandas_tools import write_pandas
 
 engine = create_engine(URL(
     user='baopham',
-    password='Ngoc738218',
+    password='XXXXXXX',
     account='gz74928.west-europe.azure',
     warehouse='COMPUTE_BAO',
     database='WILDWEST_9',
