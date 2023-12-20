@@ -59,9 +59,7 @@ df["rev_amt"] = pd.to_numeric(df["rev_amt"])
 df["rev_total_sec"]= df["rev_total_sec"].apply(lambda x: float(x))
 
 
-# Save the DataFrame to Snowflake in the Gold Layer
-# Define a chunk size
-chunk_size = 10000  
 #SQL compilation error: maximum number of expressions in a list exceeded, expected at most 16,384, got 300,006
+chunk_size = 10000  
 df.to_sql('final_table', con=engine, index=False, if_exists='replace' , chunksize=chunk_size)
 
