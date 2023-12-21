@@ -1,7 +1,6 @@
 from snowflake.sqlalchemy import URL
 from sqlalchemy import create_engine
 import pandas as pd
-from snowflake.connector.pandas_tools import write_pandas
 
 #Because of this error, have to use sqlalchemy : pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
 
